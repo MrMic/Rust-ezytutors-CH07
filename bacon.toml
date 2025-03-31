@@ -5,7 +5,7 @@
 # You can also check bacon's own bacon.toml file
 #  as an example: https://github.com/Canop/bacon/blob/main/bacon.toml
 
-default_job = "run-iter5"
+default_job = "run-iter3"
 
 [jobs.check]
 command = ["cargo", "check", "--color", "always"]
@@ -46,26 +46,26 @@ command = [
     "cargo",
     "test",
     "--package",
-    "tutor-db",
+    "tutor-web-app-ssr",
     "--bin",
-    "iter5",
+    "iter3",
     "--color",
     "always",
     "--",
     "--color",
-    "always",    # see https://github.com/Canop/bacon/issues/124
+    "always",            # see https://github.com/Canop/bacon/issues/124
 ]
 need_stdout = true
 
-[jobs.nextest5]
+[jobs.nextest3]
 command = [
     "cargo",
     "nextest",
     "run",
     "--package",
-    "tutor-db",
+    "tutor-web-app-ssr",
     "--bin",
-    "iter5",
+    "iter3",
     "--color",
     "always",
     "--hide-progress-bar",
@@ -98,14 +98,14 @@ on_success = "back"                                                    # so that
 # of waiting for program's end. If you prefer to have it restarted at
 # every change, then uncomment the 'on_change_strategy' line.
 
-[jobs.run-iter5]
+[jobs.run-iter3]
 command = [
     "cargo",
     "run",
     "-p",
-    "tutor-db",
+    "tutor-web-app-ssr",
     "--bin",
-    "iter5",
+    "iter3",
     "--color",
     "always",
     # put launch parameters for your program behind a `--` separator
@@ -131,6 +131,6 @@ allow_warnings = true
 [keybindings]
 # alt-m = "job:my-job"
 c = "job:clippy-all" # comment this to have 'c' run clippy on only the default target
-5 = "job:run-iter5"
+3 = "job:run-iter3"
 t = "job:test"
 n = "job:nextest5"
