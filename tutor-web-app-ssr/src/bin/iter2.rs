@@ -97,7 +97,7 @@ mod tests {
     async fn handle_post_1_integration_test() {
         let tera = Tera::new(concat!(env!("CARGO_MANIFEST_DIR"), "/static/iter2/**/*")).unwrap();
 
-        let mut app =
+        let app =
             test::init_service(App::new().app_data(Data::new(tera)).configure(app_config)).await;
 
         let req = test::TestRequest::post()
