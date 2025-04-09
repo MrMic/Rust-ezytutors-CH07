@@ -44,6 +44,7 @@ async fn main() -> std::io::Result<()> {
             }))
             .configure(general_routes)
             .configure(course_routes)
+            .configure(tutor_routes)
     };
 
     // * INFO: Start HTTP Server
